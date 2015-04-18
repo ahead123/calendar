@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <br>
+        <h1>Sign Up</h1>
+        <br>
+        <%= form_for(@user) do |f| %>
+        <%= f.text_field :name, class: "form-control", :placeholder=>"name", :autofocus=> true %>
+        <br>
+         <%= f.text_field :email, class: "form-control", :placeholder=>"email" %>
+         <br>
+        <%= f.text_field :password, class: "form-control", :placeholder=>"password" %>
+        <br>
+        <%= f.submit "Log In", class: "btn" %>
+        <% end %>
+      </div>
+    </div>
+ </div>

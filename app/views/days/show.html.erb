@@ -1,13 +1,15 @@
 <!-- Format a day's time so it displays in the format "Friday 1/16" -->
-<h2 class="day-time">  </h2>
+<h2 class="day-time"><%= @days.date.strftime('%A %x') %></h2>
 
 <% @events.each do |event| %>
   <div class="event">
     <h3 class="name"><%= event.name %></h3>
     <p>
       <!-- Format an event's 'from' time and 'to' time so they display in the format "9:00 pm" -->
-      <span class="from">  </span>  -  <span class="to">  </span>
+      <span class="from"><%= event.from.strftime('%l %p') %></span>  -  <span class="to"><%= event.to.strftime('%l %p') %></span>
     </p>
-    <p class="location">  </p>
+    <p class="location"><%= event.location %></p>
   </div>
 <% end %>
+
+<%= link_to "Back to Calendar", days_path %>
